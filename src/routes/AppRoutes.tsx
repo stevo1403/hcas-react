@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { useAuth } from '../hooks/useAuth';
-import ProtectedRoute from '../components/common/ProtectedRoute';
-import MainLayout from '../components/layouts/MainLayout';
-import LoginPage from '../pages/LoginPage';
-import DashboardPage from '../pages/DashboardPage';
-import UnauthorizedPage from '../pages/UnauthorizedPage';
-import NotFoundPage from '../pages/NotFoundPage';
+import { useAuth } from '../hooks/useAuth.ts';
+import ProtectedRoute from '../components/common/ProtectedRoute.tsx';
+import MainLayout from '../components/layouts/MainLayout.tsx';
+import LoginPage from '../pages/LoginPage.tsx';
+import DashboardPage from '../pages/DashboardPage.tsx';
+import UnauthorizedPage from '../pages/UnauthorizedPage.tsx';
+import NotFoundPage from '../pages/NotFoundPage.tsx';
 
 const AppRoutes: React.FC = () => {
   const { isAuthenticated } = useAuth();
@@ -16,7 +16,7 @@ const AppRoutes: React.FC = () => {
       {/* Public Routes */}
       <Route
         path="/login"
-        element={isAuthenticated ? <Navigate to="/dashboard\" replace /> : <LoginPage />}
+        element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <LoginPage />}
       />
 
       {/* Protected Routes */}
@@ -26,7 +26,7 @@ const AppRoutes: React.FC = () => {
           <ProtectedRoute>
             <MainLayout>
               <Routes>
-                <Route index element={<Navigate to="/dashboard\" replace />} />
+                <Route index element={<Navigate to="/dashboard" replace />} />
                 <Route path="dashboard" element={<DashboardPage />} />
 
                 {/* Placeholder routes - to be implemented */}
