@@ -14,9 +14,9 @@ import {
 } from '@mui/material';
 import { Visibility, VisibilityOff, Email, Lock, Person } from '@mui/icons-material';
 import { useState } from 'react';
-import { useAuth } from '../../hooks/useAuth';
-import { RegisterRequest } from '../../types';
-import LoadingSpinner from '../../components/common/LoadingSpinner';
+import { useAuth } from '../../hooks/useAuth.ts';
+import { RegisterRequest } from '../../types/index.ts';
+import LoadingSpinner from '../../components/common/LoadingSpinner.tsx';
 
 const registerSchema = Yup.object({
   email: Yup.string().email('Invalid email format').required('Email is required'),
@@ -74,7 +74,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
         <Form>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
             {error && (
-              <Alert severity="error\" sx={{ mb: 2 }}>
+              <Alert severity="error" sx={{ mb: 2 }}>
                 {error}
               </Alert>
             )}

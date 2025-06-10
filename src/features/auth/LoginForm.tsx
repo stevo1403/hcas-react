@@ -4,9 +4,9 @@ import * as Yup from 'yup';
 import { TextField, Button, Box, Alert, Link, InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff, Email, Lock } from '@mui/icons-material';
 import { useState } from 'react';
-import { useAuth } from '../../hooks/useAuth';
-import { LoginRequest } from '../../types';
-import LoadingSpinner from '../../components/common/LoadingSpinner';
+import { useAuth } from '../../hooks/useAuth.ts';
+import { LoginRequest } from '../../types/index.ts';
+import LoadingSpinner from '../../components/common/LoadingSpinner.tsx';
 
 const loginSchema = Yup.object({
   email: Yup.string().email('Invalid email format').required('Email is required'),
@@ -39,7 +39,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
         <Form>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
             {error && (
-              <Alert severity="error\" sx={{ mb: 2 }}>
+              <Alert severity="error" sx={{ mb: 2 }}>
                 {error}
               </Alert>
             )}

@@ -1,10 +1,9 @@
 import { useCallback } from 'react';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { useAppDispatch, useAppSelector } from '../store';
-import { loginStart, loginSuccess, loginFailure, logout } from '../store/slices/authSlice';
-import { LoginRequest, RegisterRequest, User } from '../types';
-import axiosInstance from '../services/axios';
-import { config } from '../config';
+import { useAppDispatch, useAppSelector } from '../store/index.ts';
+import { loginStart, loginSuccess, loginFailure, logout } from '../store/slices/authSlice.ts';
+import { LoginRequest, RegisterRequest, User } from '../types/index.ts';
+import axiosInstance from '../services/axios.ts';
 
 export const useAuth = () => {
   const dispatch = useAppDispatch();
@@ -50,7 +49,7 @@ export const useAuth = () => {
   }, [dispatch]);
 
   // Get current user
-  const { data: currentUser } = useQuery({
+  const { data: currentUser } = useQuery<User>({
     queryKey: ['currentUser'],
     queryFn: async () => {
       const response = await axiosInstance.get('/users/me');

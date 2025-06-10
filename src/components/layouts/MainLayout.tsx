@@ -22,11 +22,11 @@ import {
   DarkMode,
   LightMode,
 } from '@mui/icons-material';
-import { useAppDispatch, useAppSelector } from '../../store';
-import { toggleSidebar, toggleTheme } from '../../store/slices/uiSlice';
-import { useAuth } from '../../hooks/useAuth';
-import Sidebar from './Sidebar';
-import { config } from '../../config';
+import { useAppDispatch, useAppSelector } from '../../store/index.ts';
+import { toggleSidebar, toggleTheme } from '../../store/slices/uiSlice.ts';
+import { useAuth } from '../../hooks/useAuth.ts';
+import Sidebar from './Sidebar.tsx';
+import { config } from '../../config/index.ts';
 
 interface MainLayoutProps {
   children: React.ReactNode;

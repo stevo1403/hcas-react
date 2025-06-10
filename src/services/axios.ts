@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { config } from '../config';
+import { config } from '../config/index.ts';
 
 // Create axios instance
 const axiosInstance: AxiosInstance = axios.create({
@@ -13,7 +13,7 @@ const axiosInstance: AxiosInstance = axios.create({
 // Request interceptor
 axiosInstance.interceptors.request.use(
   (config: AxiosRequestConfig) => {
-    const token = localStorage.getItem(config.JWT_TOKEN_KEY);
+    const token = localStorage.getItem('jwt_token');
     if (token && config.headers) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -36,14 +36,14 @@ axiosInstance.interceptors.response.use(
       originalRequest._retry = true;
 
       try {
-        const refreshToken = localStorage.getItem(config.REFRESH_TOKEN_KEY);
+        const refreshToken = localStorage.getItem('refresh_token');
         if (refreshToken) {
           const response = await axios.post(`${config.API_BASE_URL}/auth/refresh`, {
             refresh_token: refreshToken,
           });
 
           const { token } = response.data;
-          localStorage.setItem(config.JWT_TOKEN_KEY, token);
+          localStorage.setItem('jwt_token', token);
 
           // Retry original request
           originalRequest.headers.Authorization = `Bearer ${token}`;
@@ -51,8 +51,8 @@ axiosInstance.interceptors.response.use(
         }
       } catch (refreshError) {
         // Refresh failed, redirect to login
-        localStorage.removeItem(config.JWT_TOKEN_KEY);
-        localStorage.removeItem(config.REFRESH_TOKEN_KEY);
+        localStorage.removeItem('jwt_token');
+        localStorage.removeItem('refresh_token');
         window.location.href = '/login';
         return Promise.reject(refreshError);
       }

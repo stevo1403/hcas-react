@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { UIState } from '../../types';
+import { UIState } from '../../types/index.ts';
 
 const initialState: UIState = {
   theme: 'light',
