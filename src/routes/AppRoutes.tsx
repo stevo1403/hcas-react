@@ -16,7 +16,7 @@ const AppRoutes: React.FC = () => {
       {/* Public Routes */}
       <Route
         path="/login"
-        element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <LoginPage />}
+        element={isAuthenticated ? <Navigate to="/dashboard\" replace /> : <LoginPage />}
       />
 
       {/* Protected Routes */}
@@ -26,7 +26,7 @@ const AppRoutes: React.FC = () => {
           <ProtectedRoute>
             <MainLayout>
               <Routes>
-                <Route index element={<Navigate to="/dashboard" replace />} />
+                <Route index element={<Navigate to="/dashboard\" replace />} />
                 <Route path="dashboard" element={<DashboardPage />} />
 
                 {/* Placeholder routes - to be implemented */}
