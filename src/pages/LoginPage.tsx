@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Tabs, Tab, Box } from '@mui/material';
-import AuthLayout from '../components/layouts/AuthLayout.tsx';
-import LoginForm from '../features/auth/LoginForm.tsx';
-import RegisterForm from '../features/auth/RegisterForm.tsx';
+import AuthLayout from '../components/layouts/AuthLayout';
+import LoginForm from '../features/auth/LoginForm';
+import RegisterForm from '../features/auth/RegisterForm';
 
 const LoginPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);

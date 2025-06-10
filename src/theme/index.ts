@@ -1,5 +1,5 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles';
-import { config } from '../config/index.ts';
+import { config } from '../config/index';
 
 const baseTheme: ThemeOptions = {
   typography: {

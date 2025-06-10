@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { useAppDispatch, useAppSelector } from '../store/index.ts';
-import { loginStart, loginSuccess, loginFailure, logout } from '../store/slices/authSlice.ts';
-import { LoginRequest, RegisterRequest, User } from '../types/index.ts';
-import axiosInstance from '../services/axios.ts';
+import { useAppDispatch, useAppSelector } from '../store/index';
+import { loginStart, loginSuccess, loginFailure, logout } from '../store/slices/authSlice';
+import { LoginRequest, RegisterRequest, User } from '../types/index';
+import axiosInstance from '../services/axios';
 
 export const useAuth = () => {
   const dispatch = useAppDispatch();

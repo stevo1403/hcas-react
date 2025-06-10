@@ -3,11 +3,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import { store } from './store/index.ts';
-import { useAppSelector } from './store/index.ts';
-import { lightTheme, darkTheme } from './theme/index.ts';
-import ErrorBoundary from './components/common/ErrorBoundary.tsx';
-import AppRoutes from './routes/AppRoutes.tsx';
+import { store } from './store/index';
+import { useAppSelector } from './store/index';
+import { lightTheme, darkTheme } from './theme/index';
+import ErrorBoundary from './components/common/ErrorBoundary';
+import AppRoutes from './routes/AppRoutes';
 
 // Create a query client
 const queryClient = new QueryClient({

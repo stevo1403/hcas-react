@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { config } from '../config/index.ts';
+import { config } from '../config/index';
 
 // Create axios instance
 const axiosInstance: AxiosInstance = axios.create({
