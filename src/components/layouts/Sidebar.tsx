@@ -28,7 +28,7 @@ import {
   Group,
 } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth.ts';
 import { useState } from 'react';
 
 interface MenuItem {

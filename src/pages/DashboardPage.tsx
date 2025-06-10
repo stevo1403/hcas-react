@@ -21,7 +21,7 @@ import {
   Person,
   Schedule,
 } from '@mui/icons-material';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../hooks/useAuth.ts';
 
 interface StatCardProps {
   title: string;
