@@ -12,28 +12,16 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <AuthLayout
-      title="Welcome to HCAS"
-      subtitle="Health Center Automation System"
-    >
+    <AuthLayout title="Welcome to HCAS" subtitle="Health Center Automation System">
       <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 3 }}>
-        <Tabs
-          value={activeTab}
-          onChange={handleTabChange}
-          aria-label="auth tabs"
-          centered
-        >
+        <Tabs value={activeTab} onChange={handleTabChange} aria-label="auth tabs" centered>
           <Tab label="Sign In" />
           <Tab label="Sign Up" />
         </Tabs>
       </Box>
 
-      {activeTab === 0 && (
-        <LoginForm onSwitchToRegister={() => setActiveTab(1)} />
-      )}
-      {activeTab === 1 && (
-        <RegisterForm onSwitchToLogin={() => setActiveTab(0)} />
-      )}
+      {activeTab === 0 && <LoginForm onSwitchToRegister={() => setActiveTab(1)} />}
+      {activeTab === 1 && <RegisterForm onSwitchToLogin={() => setActiveTab(0)} />}
     </AuthLayout>
   );
 };

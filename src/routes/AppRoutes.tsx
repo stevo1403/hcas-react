@@ -16,9 +16,7 @@ const AppRoutes: React.FC = () => {
       {/* Public Routes */}
       <Route
         path="/login"
-        element={
-          isAuthenticated ? <Navigate to="/dashboard\" replace /> : <LoginPage />
-        }
+        element={isAuthenticated ? <Navigate to="/dashboard\" replace /> : <LoginPage />}
       />
 
       {/* Protected Routes */}
@@ -30,17 +28,26 @@ const AppRoutes: React.FC = () => {
               <Routes>
                 <Route index element={<Navigate to="/dashboard\" replace />} />
                 <Route path="dashboard" element={<DashboardPage />} />
-                
+
                 {/* Placeholder routes - to be implemented */}
                 <Route path="patients/*" element={<div>Patients Module - Coming Soon</div>} />
-                <Route path="appointments/*" element={<div>Appointments Module - Coming Soon</div>} />
-                <Route path="medical-records/*" element={<div>Medical Records Module - Coming Soon</div>} />
+                <Route
+                  path="appointments/*"
+                  element={<div>Appointments Module - Coming Soon</div>}
+                />
+                <Route
+                  path="medical-records/*"
+                  element={<div>Medical Records Module - Coming Soon</div>}
+                />
                 <Route path="lab-results/*" element={<div>Lab Results Module - Coming Soon</div>} />
                 <Route path="pharmacy/*" element={<div>Pharmacy Module - Coming Soon</div>} />
                 <Route path="departments/*" element={<div>Departments Module - Coming Soon</div>} />
-                <Route path="notifications/*" element={<div>Notifications Module - Coming Soon</div>} />
+                <Route
+                  path="notifications/*"
+                  element={<div>Notifications Module - Coming Soon</div>}
+                />
                 <Route path="settings/*" element={<div>Settings Module - Coming Soon</div>} />
-                
+
                 {/* Admin Routes */}
                 <Route
                   path="admin/*"
@@ -50,7 +57,7 @@ const AppRoutes: React.FC = () => {
                     </ProtectedRoute>
                   }
                 />
-                
+
                 <Route path="unauthorized" element={<UnauthorizedPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>

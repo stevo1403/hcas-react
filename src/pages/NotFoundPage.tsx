@@ -34,13 +34,10 @@ const NotFoundPage: React.FC = () => {
           Page Not Found
         </Typography>
         <Typography variant="body1" color="text.secondary" paragraph>
-          The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
+          The page you're looking for doesn't exist. It might have been moved, deleted, or you
+          entered the wrong URL.
         </Typography>
-        <Button
-          variant="contained"
-          onClick={() => navigate('/dashboard')}
-          sx={{ mt: 2 }}
-        >
+        <Button variant="contained" onClick={() => navigate('/dashboard')} sx={{ mt: 2 }}>
           Go to Dashboard
         </Button>
       </Paper>

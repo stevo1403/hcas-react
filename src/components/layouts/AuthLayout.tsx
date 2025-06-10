@@ -42,11 +42,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitle }) =>
             {title}
           </Typography>
           {subtitle && (
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              sx={{ mb: 3 }}
-            >
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
               {subtitle}
             </Typography>
           )}

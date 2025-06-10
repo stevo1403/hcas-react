@@ -19,26 +19,18 @@ import { RegisterRequest } from '../../types';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 
 const registerSchema = Yup.object({
-  email: Yup.string()
-    .email('Invalid email format')
-    .required('Email is required'),
+  email: Yup.string().email('Invalid email format').required('Email is required'),
   password: Yup.string()
     .min(8, 'Password must be at least 8 characters')
     .required('Password is required'),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref('password')], 'Passwords must match')
     .required('Please confirm your password'),
-  first_name: Yup.string()
-    .required('First name is required'),
-  last_name: Yup.string()
-    .required('Last name is required'),
-  gender: Yup.string()
-    .oneOf(['M', 'F'], 'Select Male or Female')
-    .required('Gender is required'),
-  next_of_kin: Yup.string()
-    .required('Next of kin is required'),
-  matric_no: Yup.string()
-    .required('Matriculation number is required'),
+  first_name: Yup.string().required('First name is required'),
+  last_name: Yup.string().required('Last name is required'),
+  gender: Yup.string().oneOf(['M', 'F'], 'Select Male or Female').required('Gender is required'),
+  next_of_kin: Yup.string().required('Next of kin is required'),
+  matric_no: Yup.string().required('Matriculation number is required'),
   phone_no: Yup.string(),
   country: Yup.string().default('Nigeria'),
 });
@@ -156,10 +148,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
                     ),
                     endAdornment: (
                       <InputAdornment position="end">
-                        <IconButton
-                          onClick={() => setShowPassword(!showPassword)}
-                          edge="end"
-                        >
+                        <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
                           {showPassword ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
                       </InputAdornment>

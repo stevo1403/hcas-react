@@ -8,9 +8,7 @@ import { config } from '../config';
 
 export const useAuth = () => {
   const dispatch = useAppDispatch();
-  const { user, token, isAuthenticated, isLoading, error } = useAppSelector(
-    (state) => state.auth
-  );
+  const { user, token, isAuthenticated, isLoading, error } = useAppSelector((state) => state.auth);
 
   // Login mutation
   const loginMutation = useMutation({

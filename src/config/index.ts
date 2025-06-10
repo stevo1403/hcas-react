@@ -5,14 +5,14 @@ export const config = {
   JWT_TOKEN_KEY: 'hcas_token',
   REFRESH_TOKEN_KEY: 'hcas_refresh_token',
   USER_PREFERENCES_KEY: 'hcas_user_preferences',
-  
+
   // Pagination defaults
   DEFAULT_PAGE_SIZE: 10,
-  
+
   // File upload limits
   MAX_FILE_SIZE: 10 * 1024 * 1024, // 10MB
   ALLOWED_FILE_TYPES: ['image/jpeg', 'image/png', 'application/pdf'],
-  
+
   // Theme colors
   COLORS: {
     primary: '#2E7D32',

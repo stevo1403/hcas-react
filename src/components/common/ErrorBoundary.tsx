@@ -60,11 +60,7 @@ class ErrorBoundary extends Component<Props, State> {
             <Typography variant="body1" color="text.secondary" paragraph>
               We're sorry, but something unexpected happened. Please try refreshing the page.
             </Typography>
-            <Button
-              variant="contained"
-              onClick={this.handleReload}
-              sx={{ mt: 2 }}
-            >
+            <Button variant="contained" onClick={this.handleReload} sx={{ mt: 2 }}>
               Refresh Page
             </Button>
           </Paper>

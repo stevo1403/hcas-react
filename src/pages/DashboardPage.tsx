@@ -35,9 +35,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, icon, color, trend })
   <Card sx={{ height: '100%' }}>
     <CardContent>
       <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-        <Avatar sx={{ bgcolor: color, mr: 2 }}>
-          {icon}
-        </Avatar>
+        <Avatar sx={{ bgcolor: color, mr: 2 }}>{icon}</Avatar>
         <Box>
           <Typography variant="h4" component="div" fontWeight="bold">
             {value}
@@ -72,7 +70,7 @@ const DashboardPage: React.FC = () => {
       trend: '+12% from last month',
     },
     {
-      title: 'Today\'s Appointments',
+      title: "Today's Appointments",
       value: 28,
       icon: <CalendarToday />,
       color: '#00897B',
@@ -125,11 +123,16 @@ const DashboardPage: React.FC = () => {
 
   const getActivityColor = (type: string) => {
     switch (type) {
-      case 'patient': return 'primary';
-      case 'appointment': return 'secondary';
-      case 'lab': return 'warning';
-      case 'record': return 'success';
-      default: return 'default';
+      case 'patient':
+        return 'primary';
+      case 'appointment':
+        return 'secondary';
+      case 'lab':
+        return 'warning';
+      case 'record':
+        return 'success';
+      default:
+        return 'default';
     }
   };
 
@@ -198,7 +201,10 @@ const DashboardPage: React.FC = () => {
               Quick Actions
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 2 }}>
-              <Card variant="outlined" sx={{ cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' } }}>
+              <Card
+                variant="outlined"
+                sx={{ cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' } }}
+              >
                 <CardContent sx={{ py: 2 }}>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <People sx={{ mr: 2, color: 'primary.main' }} />
@@ -206,8 +212,11 @@ const DashboardPage: React.FC = () => {
                   </Box>
                 </CardContent>
               </Card>
-              
-              <Card variant="outlined" sx={{ cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' } }}>
+
+              <Card
+                variant="outlined"
+                sx={{ cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' } }}
+              >
                 <CardContent sx={{ py: 2 }}>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <CalendarToday sx={{ mr: 2, color: 'secondary.main' }} />
@@ -215,8 +224,11 @@ const DashboardPage: React.FC = () => {
                   </Box>
                 </CardContent>
               </Card>
-              
-              <Card variant="outlined" sx={{ cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' } }}>
+
+              <Card
+                variant="outlined"
+                sx={{ cursor: 'pointer', '&:hover': { bgcolor: 'action.hover' } }}
+              >
                 <CardContent sx={{ py: 2 }}>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Assignment sx={{ mr: 2, color: 'warning.main' }} />

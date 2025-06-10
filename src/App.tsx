@@ -23,7 +23,7 @@ const queryClient = new QueryClient({
 
 const AppContent: React.FC = () => {
   const theme = useAppSelector((state) => state.ui.theme);
-  
+
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <CssBaseline />

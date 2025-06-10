@@ -34,13 +34,10 @@ const UnauthorizedPage: React.FC = () => {
           Access Denied
         </Typography>
         <Typography variant="body1" color="text.secondary" paragraph>
-          You don't have permission to access this page. Please contact your administrator if you believe this is an error.
+          You don't have permission to access this page. Please contact your administrator if you
+          believe this is an error.
         </Typography>
-        <Button
-          variant="contained"
-          onClick={() => navigate('/dashboard')}
-          sx={{ mt: 2 }}
-        >
+        <Button variant="contained" onClick={() => navigate('/dashboard')} sx={{ mt: 2 }}>
           Go to Dashboard
         </Button>
       </Paper>

@@ -1,15 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import {
-  TextField,
-  Button,
-  Box,
-  Alert,
-  Link,
-  InputAdornment,
-  IconButton,
-} from '@mui/material';
+import { TextField, Button, Box, Alert, Link, InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff, Email, Lock } from '@mui/icons-material';
 import { useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
@@ -17,11 +9,8 @@ import { LoginRequest } from '../../types';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 
 const loginSchema = Yup.object({
-  email: Yup.string()
-    .email('Invalid email format')
-    .required('Email is required'),
-  password: Yup.string()
-    .required('Password is required'),
+  email: Yup.string().email('Invalid email format').required('Email is required'),
+  password: Yup.string().required('Password is required'),
 });
 
 interface LoginFormProps {

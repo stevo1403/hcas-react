@@ -118,7 +118,7 @@ const Sidebar: React.FC = () => {
     if (item.children) {
       const isOpen = openItems.includes(item.text);
       if (isOpen) {
-        setOpenItems(openItems.filter(text => text !== item.text));
+        setOpenItems(openItems.filter((text) => text !== item.text));
       } else {
         setOpenItems([...openItems, item.text]);
       }
@@ -178,7 +178,7 @@ const Sidebar: React.FC = () => {
         {hasChildren && (
           <Collapse in={isOpen} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              {item.children!.map(child => renderMenuItem(child, level + 1))}
+              {item.children!.map((child) => renderMenuItem(child, level + 1))}
             </List>
           </Collapse>
         )}
@@ -194,9 +194,7 @@ const Sidebar: React.FC = () => {
         </Typography>
       </Toolbar>
       <Divider />
-      <List sx={{ flexGrow: 1 }}>
-        {menuItems.map(item => renderMenuItem(item))}
-      </List>
+      <List sx={{ flexGrow: 1 }}>{menuItems.map((item) => renderMenuItem(item))}</List>
     </Box>
   );
 };
