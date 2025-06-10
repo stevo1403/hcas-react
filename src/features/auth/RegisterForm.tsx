@@ -74,7 +74,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
         <Form>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
             {error && (
-              <Alert severity="error" sx={{ mb: 2 }}>
+              <Alert severity="error\" sx={{ mb: 2 }}>
                 {error}
               </Alert>
             )}
