@@ -18,7 +18,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ message = 'Loading...',
     >
       <CircularProgress size={size} />
       {message && (
-        <Typography variant="body2\" color="text.secondary">
+        <Typography variant="body2" color="text.secondary">
           {message}
         </Typography>
       )}
