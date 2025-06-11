@@ -1,5 +1,5 @@
 export const config = {
-  API_BASE_URL: process.env.REACT_APP_API_BASE_URL || '/api',
+  API_BASE_URL: process.env.REACT_APP_API_BASE_URL || '/',
   APP_NAME: 'Health Center Automation System',
   APP_SHORT_NAME: 'HCAS',
   JWT_TOKEN_KEY: 'hcas_token',
